@@ -1,84 +1,87 @@
-
-import createMuiTheme, { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
-import { MuiThemeProvider } from '@material-ui/core/styles'
-import * as React from 'react'
-import Routes from '../Routes'
+import createMuiTheme, {
+  ThemeOptions
+} from "@material-ui/core/styles/createMuiTheme"
+import { MuiThemeProvider } from "@material-ui/core/styles"
+import * as React from "react"
+import Routes from "../Routes"
 // import { greyColor } from '../theme/colors'
 // import { orange } from '@material-ui/core/colors'
-import pink from '@material-ui/core/colors/pink'
-import grey from '@material-ui/core/colors/grey'
+import yellow from "@material-ui/core/colors/yellow"
+import grey from "@material-ui/core/colors/grey"
+// import { OverflowYProperty } from "../../node_modules/csstype";
 
 // ? Declare new theme variables
-declare module '@material-ui/core/styles/createMuiTheme' {
+declare module "@material-ui/core/styles/createMuiTheme" {
+  interface Theme {
+    appBar: {
+      flexGrow: number
+      backgroundColor: string
+    }
+    paper: {
+      height: string
+      color: string
+      backgroundColor: string
+      // overflowY: OverflowYProperty
+    }
+  }
+
   interface ThemeOptions {
-    custom?: {
-      colors?: {
-        inputUnderline?: string,
-        referral: string
-      }
-    },
-    modal?: {
-      padding?: number
+    appBar: {
+      flexGrow: number
+      backgroundColor: string
+    }
+    paper: {
+      height: string
+      color: string
+      backgroundColor: string
+      // overflowY: OverflowYProperty
     }
   }
 }
+
+// ?? Add new theme variables
+const theme = createMyTheme({
+  appBar: {
+    flexGrow: 1,
+    backgroundColor: yellow[600]
+  },
+  paper: {
+    height: "100vh",
+    color: "black",
+    backgroundColor: yellow[200],
+    // overflowY: "scroll"
+  }
+})
 
 // Edit Original MUI Settings
 function createMyTheme(options: ThemeOptions) {
   return createMuiTheme({
     overrides: {
-      MuiInputLabel: {
-        // root: {
-        //   color: 'orange',
-        //   '&:focus': {
-        //     color: 'green'
-        //   }
-        // },
-        // shrink: {
-        //   color: 'brown',
-        //   '&cssFocused': {
-        //     color: 'orange'
-        //   }
-        // },
-      },
       MuiInput: {
         underline: {
-          '&:before': {
+          "&:before": {
             borderBottomColor: grey[400]
           },
-          '&:hover:not($disabled):not($error):not($focused):before': {
+          "&:hover:not($disabled):not($error):not($focused):before": {
             borderBottomColor: grey[800]
           },
-          '&:after': {
-            borderBottomColor: grey[600],
-          },
+          "&:after": {
+            borderBottomColor: grey[600]
+          }
         }
       }
     },
     typography: {
-      fontFamily: 'Poppins'
+      fontFamily: "Poppins"
     },
     palette: {
       background: {
         default: "#ECF5F8"
       }
     },
-    ...options,
+    ...options
   })
 }
-
-// ?? Add new theme variables
-const theme = createMyTheme({
-  custom: {
-    colors: {
-      // inputUnderline: grey[600]
-      referral: pink[500]
-    }
-  },
-  modal: {
-    padding: 30
-  }
-})
 
 const SetupTheme = (props: any) => {
   return (
