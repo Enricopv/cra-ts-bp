@@ -9,9 +9,9 @@ class Routes extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route exact={true} path="/" component={Dashboard} />
-          {/* <Route exact={true} path="/" component={Home} />
-          <PrivateRoute path="/dashboard" component={Dashboard}/>
-          <Route path="/unauthorized" component={Unauthorized}/>
+          {/* <Route exact={true} path="/" component={Home} /> */}
+          {/* <PrivateRoute path="/dashboard" component={Dashboard}/> */}
+          {/* <Route path="/unauthorized" component={Unauthorized}/>
           <Route path="/login" component={Register}/>
           <Route path="/signup" component={Register}/>
           <Route exact={true} path="/offer/:id" component={Offer}/> */}

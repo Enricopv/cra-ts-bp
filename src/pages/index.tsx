@@ -1,5 +1,5 @@
 import Splash from "./Splash/Splash"
-import Dashboard from "./Dashboard/Dashboard"
+import Dashboard from "./Dashboard"
 
 export {
   Splash,
