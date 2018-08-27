@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
-    // "paths": {
-    //   "DashboardComponents/*": ["./pages/Dashboard/pages/components/*"],
-    //   "graphql/*": ["./graphql/*"]
-    // },
+    "paths": {
+      "components/*": ["./components/*"],
+      "theme/*": ["./theme/*"]
+      // "graphql/*": ["./graphql/*"]
+    },
     "outDir": "build/dist",
     "module": "esnext",
     "target": "es5",

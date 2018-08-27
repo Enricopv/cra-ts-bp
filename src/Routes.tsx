@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { Splash } from './pages'
+import { Dashboard } from './pages'
 // import { getToken } from './utils/auth'
 
 class Routes extends React.Component {
@@ -8,7 +8,7 @@ class Routes extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact={true} path="/" component={Splash} />
+          <Route exact={true} path="/" component={Dashboard} />
           {/* <Route exact={true} path="/" component={Home} />
           <PrivateRoute path="/dashboard" component={Dashboard}/>
           <Route path="/unauthorized" component={Unauthorized}/>
